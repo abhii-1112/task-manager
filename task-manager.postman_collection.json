@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "f47d6717-abe1-4f83-9dae-54b351547555",
+		"name": "task-manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37069066"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Abhi\",\r\n  \"email\": \"abhi@test.com\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"abhi@test.com\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGE4NDhkMDFiOTc3MzcwMzFjNWVmNGIiLCJpYXQiOjE3NTU4NTk4NTgsImV4cCI6MTc1NTg2MzQ1OH0.iYEjdSL4-VkT-_sXEZ0x36dp4QmCfPm6vJumK8AUVbU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Finish Assignment\",\r\n  \"description\": \"Complete the task manager API assignment\",\r\n  \"status\": \"pending\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "taskbyId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGE4NDhkMDFiOTc3MzcwMzFjNWVmNGIiLCJpYXQiOjE3NTU4NTk4NTgsImV4cCI6MTc1NTg2MzQ1OH0.iYEjdSL4-VkT-_sXEZ0x36dp4QmCfPm6vJumK8AUVbU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/tasks/68a85815742ea0c7fa619778",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"tasks",
+						"68a85815742ea0c7fa619778"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGE4NTVlMTc0MmVhMGM3ZmE2MTk3NzAiLCJpYXQiOjE3NTU4NjMyNDQsImV4cCI6MTc1NTg2Njg0NH0.uXNItAbMsax0XPVpKJxaXZuFxv1S8n7tkKBw8MAmvoY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "0",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGE4NTVlMTc0MmVhMGM3ZmE2MTk3NzAiLCJpYXQiOjE3NTU4NjI5NjUsImV4cCI6MTc1NTg2NjU2NX0.MvISMWywaOIOm-aoKGTgEeDz6DcRjvUEk2RKEQtsNQo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Finish Assignment\",\r\n  \"description\": \"Update: include Postman collection and README\",\r\n  \"status\": \"completed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/tasks/68a85815742ea0c7fa619778",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"tasks",
+						"68a85815742ea0c7fa619778"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGE4NTVlMTc0MmVhMGM3ZmE2MTk3NzAiLCJpYXQiOjE3NTU4NjMyNDQsImV4cCI6MTc1NTg2Njg0NH0.uXNItAbMsax0XPVpKJxaXZuFxv1S8n7tkKBw8MAmvoY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/tasks/68a85815742ea0c7fa619778",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"tasks",
+						"68a85815742ea0c7fa619778"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
